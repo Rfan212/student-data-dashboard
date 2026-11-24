@@ -55,8 +55,8 @@ const murid = [
 function renderMurid(dataMurid) {
   const container = document.getElementById('tabelMurid');
 
-  let projectsHTML = '';
-  dataMurid.map((siswa, nomer) => {
+  const projectsHTML = dataMurid.map((siswa, nomer) => {
+    // BACKGROUND SCORE
     let colorScore;
 
     if (siswa.score < 75) {
@@ -67,16 +67,16 @@ function renderMurid(dataMurid) {
       colorScore = 'nilaiHijau';
     }
 
-    projectsHTML += `
-        <tr>
-            <th scope="row">${nomer + 1}</th>
-            <td class="fw-bold text-start">${siswa.name}</td>
-            <td><div class="bgClass">${siswa.class}</div></td>
-            <td><div class="${colorScore}">${siswa.score}</div></td>
-        </tr>`;
+    return `
+      <tr>
+        <th scope="row">${nomer + 1}</th>
+        <td class="fw-bold text-start">${siswa.name}</td>
+        <td><div class="bgClass">${siswa.class}</div></td>
+        <td><div class="${colorScore}">${siswa.score}</div></td>
+      </tr>`;
   });
 
-  container.innerHTML = projectsHTML;
+  container.innerHTML = projectsHTML.join('');
 }
 renderMurid(murid);
 
