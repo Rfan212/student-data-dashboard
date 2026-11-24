@@ -89,7 +89,7 @@ document.getElementById('avScore').textContent = `
 // TOMBOL SEARCH
 const tombolCari = document.getElementById('exampleGhostInput');
 tombolCari.addEventListener('search', function () {
-  const hurufKecil = this.value.toLowerCase().trim();
+  const hurufKecil = tombolCari.value.toLowerCase().trim();
 
   const cariSiswa = murid.filter((siswa) => siswa.name.toLowerCase().includes(hurufKecil));
   renderMurid(cariSiswa);
