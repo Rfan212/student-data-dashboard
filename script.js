@@ -83,8 +83,7 @@ renderMurid(murid);
 // RATA-RATA NILAI
 const totalNilai = murid.reduce((sumMurid, siswa) => sumMurid + siswa.score, 0);
 const average = totalNilai / murid.length;
-document.getElementById('avScore').textContent = `
-      ${average.toFixed(1)}`;
+document.getElementById('avScore').textContent = average.toFixed(1);
 
 // TOMBOL SEARCH
 const tombolCari = document.getElementById('exampleGhostInput');
